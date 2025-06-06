@@ -1,0 +1,75 @@
+{
+  "translation": {
+    "navbar": {
+      "Home": "Accueil",
+      "Identification": "Identification",
+      "Distribution": "Répartition",
+      "Species": "Espèces",
+      "Anatomy": "Anatomie"
+    },
+
+    "settings": {
+      "Settings": "Paramètres",
+      "Theme": "Thème",
+      "Light": "Clair",
+      "Dark": "Sombre",
+      "Language": "Langue",
+      "French": "Français",
+      "English": "Anglais"
+    },
+
+    "profile-settings": {
+      "Profile Settings": "Paramètres du profil",
+      "Username": "Pseudo",
+      "Email": "Mail",
+      "Password": "Mot de passe",
+      "Log out": "Se déconnecter"
+    },
+    
+    "article": {
+      "title": "Les colonies de fourmis : maîtres de l'organisation",
+      "author": "Dr. Emma Durand",
+      "date": "6 juin 2025",
+      "content": "Les fourmis sont des insectes fascinants connus pour leurs structures sociales complexes et leur coopération incroyable au sein des colonies. Chaque fourmi a un rôle spécifique—ouvrière, soldat, reine—et ensemble elles maintiennent l’un des systèmes les plus efficaces de la nature.\n\nLes colonies de fourmis communiquent grâce à des phéromones, ce qui leur permet de coordonner la collecte de nourriture, la défense et la construction du nid. Leur organisation et leur capacité d’adaptation en font l’une des espèces les plus prospères sur Terre."
+    },
+
+    "ant-colony-tracking": {
+      "Ant Colony Tracking": "Suivi d'élevage de fourmis",
+      "Colony Name": "Nom de la colonie",
+      "Enter colony name": "Entrez le nom de la colonie",
+      "Species Name": "Nom de l'espèce",
+      "Enter species name": "Entrez le nom de l'espèce",
+      "Individual Count": "Nombre d'individus",
+      "Enter number of individuals": "Entrez le nombre d'individus",
+      "Last Feeding": "Dernier nourrissage",
+      "Last Humidity": "Dernière humidification",
+      "Save Tracking": "Enregistrer le suivi"
+    },
+
+    "signin": {
+      "title": "Créer un compte",
+      "username": "Nom d'utilisateur",
+      "usernamePlaceholder": "Entrez votre nom d'utilisateur",
+      "email": "Email",
+      "emailPlaceholder": "Entrez votre adresse email",
+      "password": "Mot de passe",
+      "passwordPlaceholder": "Entrez votre mot de passe",
+      "confirmPassword": "Confirmer le mot de passe",
+      "confirmPasswordPlaceholder": "Répétez votre mot de passe",
+      "submit": "S'inscrire",
+      "invalidEmail": "Veuillez entrer une adresse email valide.",
+      "passwordMismatch": "Les mots de passe ne correspondent pas."
+    },
+
+    "login": {
+      "title": "Connexion",
+      "username": "Nom d'utilisateur",
+      "usernamePlaceholder": "Entrez votre nom d'utilisateur",
+      "password": "Mot de passe",
+      "passwordPlaceholder": "Entrez votre mot de passe",
+      "submit": "Se connecter",
+      "passwordMismatch": "Les mots de passe ne correspondent pas."
+    }
+
+  }
+}

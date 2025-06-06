@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,500&display=swap');
+
+.navbar {
+  height: 60px;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+  background-image: url('../../../assets/images/grass.png');
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  color: black;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.navbar .background {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(55, 120, 51, 0.7);
+  z-index: 2;
+}
+
+.logo {
+  display: flex;
+  align-items: center; 
+  position: fixed;
+  color: black;
+  font-family: 'EB Garamond', serif;
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 500;
+  left: 0;
+  padding: 1rem;
+  z-index: 11;
+}
+
+.logo:hover {
+  color: white;
+}
+
+.logo-image {
+  width: 60px;
+  height: auto;
+  transform: rotate(45deg);
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  position: fixed;
+  right: 0;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 2rem;
+  z-index: 11;
+}
+
+.navLinks li {
+  pointer-events: auto !important;
+  font-size: 1.4rem;
+  font-weight: 600;
+  transition: 'all 0.5s ease-in-out';
+  cursor: pointer; 
+}
+
+.navLinks li:hover {
+  color:white;
+}

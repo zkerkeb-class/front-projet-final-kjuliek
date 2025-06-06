@@ -1,0 +1,75 @@
+{
+  "translation": {
+    "navbar": {
+      "Home": "Home",
+      "Identification": "Identification",
+      "Distribution": "Distribution",
+      "Species": "Species",
+      "Anatomy": "Anatomy"
+    },
+
+    "settings": {
+      "Settings": "Settings",
+      "Theme": "Theme",
+      "Light": "Light",
+      "Dark": "Dark",
+      "Language": "Language",
+      "French": "French",
+      "English": "English"
+    },
+
+    "profile-settings": {
+      "Profile Settings": "Profile Settings",
+      "Username": "Username",
+      "Email": "Email",
+      "Password": "Password",
+      "Log out": "Log out"
+    },
+    
+    "article": {
+      "title": "Ant Colonies: Masters of Organization",
+      "author": "Dr. Emma Durand",
+      "date": "June 6, 2025",
+      "content": "Ants are fascinating insects known for their complex social structures and incredible cooperation within colonies. Each ant has a specific role—worker, soldier, queen—and together they maintain one of the most efficient systems in nature.\n\nAnt colonies communicate using pheromones, enabling them to coordinate food gathering, defense, and nest construction. Their organization and adaptability make them one of the most successful species on Earth."
+    },
+
+    "ant-colony-tracking": {
+      "Ant Colony Tracking": "Ant Colony Tracking",
+      "Colony Name": "Colony Name",
+      "Enter colony name": "Enter colony name",
+      "Species Name": "Species Name",
+      "Enter species name": "Enter species name",
+      "Individual Count": "Individual Count",
+      "Enter number of individuals": "Enter number of individuals",
+      "Last Feeding": "Last Feeding",
+      "Last Humidity": "Last Humidity",
+      "Save Tracking": "Save Tracking"
+    },
+
+    "signin": {
+      "title": "Create an account",
+      "username": "Username",
+      "usernamePlaceholder": "Enter your username",
+      "email": "Email",
+      "emailPlaceholder": "Enter your email address",
+      "password": "Password",
+      "passwordPlaceholder": "Enter your password",
+      "confirmPassword": "Confirm Password",
+      "confirmPasswordPlaceholder": "Re-enter your password",
+      "submit": "Register",
+      "invalidEmail": "Please enter a valid email address.",
+      "passwordMismatch": "Passwords do not match."
+    },
+
+    "login": {
+      "title": "Log In",
+      "username": "Username",
+      "usernamePlaceholder": "Enter your username",
+      "password": "Password",
+      "passwordPlaceholder": "Enter your password",
+      "submit": "Log In",
+      "passwordMismatch": "Passwords do not match."
+    }
+    
+  }
+}

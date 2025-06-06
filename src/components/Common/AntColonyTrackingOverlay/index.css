@@ -1,0 +1,47 @@
+.ant-colony-overlay {
+  position: absolute;
+  left: 60px;
+  top: 0;
+  width: 300px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 0;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+  color: black;
+  padding: 1rem;
+  z-index: 100;
+}
+
+.ant-colony-group {
+  margin-bottom: 15px;
+}
+
+.ant-colony-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.ant-colony-group input {
+  width: 90%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.ant-colony-save-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  width: 100%;
+}
+
+.ant-colony-save-button:hover {
+  background-color: #45a049;
+}
