@@ -1,27 +1,27 @@
-import './index.css';
+import '../LogIn/index.css';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 
-const SignIn = ({ onLogin }) => {
+const SignIn = ({ onRegister, onLoginClick }) => {
   const { t } = useTranslation();
   const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
+  const [mail, setMail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
   const [errors, setErrors] = useState({});
 
-  const validateEmail = (email) => {
+  const validateMail = (mail) => {
     const regex = /^\S+@\S+\.\S+$/;
-    return regex.test(email);
+    return regex.test(mail);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const newErrors = {};
-    if (!validateEmail(email)) {
-      newErrors.email = t('signin.invalidEmail');
+    if (!validateMail(mail)) {
+      newErrors.mail = t('signin.invalidMail');
     }
 
     if (password !== confirmPassword) {
@@ -34,7 +34,7 @@ const SignIn = ({ onLogin }) => {
     }
 
     setErrors({});
-    onLogin(username, email, password);
+    onRegister(username, mail, password);
   };
 
   return (
@@ -55,19 +55,19 @@ const SignIn = ({ onLogin }) => {
           />
         </div>
 
-        <label htmlFor="email">{t('signin.email')}</label>
+        <label htmlFor="mail">{t('signin.mail')}</label>
         <div className="login-group">
           <input
             className="login-input"
-            type="email"
-            id="email"
-            name="email"
-            placeholder={t('signin.emailPlaceholder')}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            type="mail"
+            id="mail"
+            name="mail"
+            placeholder={t('signin.mailPlaceholder')}
+            value={mail}
+            onChange={(e) => setMail(e.target.value)}
             required
           />
-          {errors.email && <small className="error-text">{errors.email}</small>}
+          {errors.mail && <small className="error-text">{errors.mail}</small>}
         </div>
 
         <label htmlFor="password">{t('signin.password')}</label>
@@ -101,6 +101,10 @@ const SignIn = ({ onLogin }) => {
 
         <button type="submit" className="login-button">
           {t('signin.submit')}
+        </button>
+        
+        <button onClick={onLoginClick}>
+          {t('login.goToLogin')}
         </button>
       </form>
     </div>

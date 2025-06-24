@@ -1,9 +1,16 @@
 import './index.css';
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router";
 
 const ProfilOverlay = ({ isOpen }) => {
   if (!isOpen) return null;
   const { t } = useTranslation();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
+  };
 
   return (
     <div className="profil-overlay">
@@ -15,8 +22,8 @@ const ProfilOverlay = ({ isOpen }) => {
       </div>
 
       <div className="profil-group">
-        <label htmlFor="email">{t("profile-settings.Email")} :</label>
-        <input type="email" id="email" name="email" placeholder="votre@mail.com" />
+        <label htmlFor="mail">{t("profile-settings.Mail")} :</label>
+        <input type="mail" id="mail" name="mail" placeholder="votre@mail.com" />
       </div>
 
       <div className="profil-group">
@@ -24,7 +31,7 @@ const ProfilOverlay = ({ isOpen }) => {
         <input type="password" id="password" name="password" placeholder="••••••••" />
       </div>
 
-      <button className="logout-button" type="button">
+      <button className="logout-button" type="button" onClick={handleLogout}>
         {t("profile-settings.Log out")}
       </button>
     </div>

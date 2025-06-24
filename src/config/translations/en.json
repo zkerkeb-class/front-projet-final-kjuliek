@@ -21,7 +21,7 @@
     "profile-settings": {
       "Profile Settings": "Profile Settings",
       "Username": "Username",
-      "Email": "Email",
+      "Mail": "Mail",
       "Password": "Password",
       "Log out": "Log out"
     },
@@ -50,14 +50,14 @@
       "title": "Create an account",
       "username": "Username",
       "usernamePlaceholder": "Enter your username",
-      "email": "Email",
-      "emailPlaceholder": "Enter your email address",
+      "mail": "Mail",
+      "mailPlaceholder": "Enter your mail address",
       "password": "Password",
       "passwordPlaceholder": "Enter your password",
       "confirmPassword": "Confirm Password",
       "confirmPasswordPlaceholder": "Re-enter your password",
       "submit": "Register",
-      "invalidEmail": "Please enter a valid email address.",
+      "invalidMail": "Please enter a valid mail address.",
       "passwordMismatch": "Passwords do not match."
     },
 
@@ -65,10 +65,14 @@
       "title": "Log In",
       "username": "Username",
       "usernamePlaceholder": "Enter your username",
+      "usernameRequired": "Please enter username",
       "password": "Password",
       "passwordPlaceholder": "Enter your password",
+      "passwordRequired": "Please enter password",
       "submit": "Log In",
-      "passwordMismatch": "Passwords do not match."
+      "passwordMismatch": "Passwords do not match.",
+      "goToRegister": "Create an account",
+      "goToLogin": "Back to login"
     }
     
   }

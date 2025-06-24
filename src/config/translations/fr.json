@@ -21,7 +21,7 @@
     "profile-settings": {
       "Profile Settings": "Paramètres du profil",
       "Username": "Pseudo",
-      "Email": "Mail",
+      "Mail": "Email",
       "Password": "Mot de passe",
       "Log out": "Se déconnecter"
     },
@@ -50,14 +50,14 @@
       "title": "Créer un compte",
       "username": "Nom d'utilisateur",
       "usernamePlaceholder": "Entrez votre nom d'utilisateur",
-      "email": "Email",
-      "emailPlaceholder": "Entrez votre adresse email",
+      "mail": "Email",
+      "mailPlaceholder": "Entrez votre adresse email",
       "password": "Mot de passe",
       "passwordPlaceholder": "Entrez votre mot de passe",
       "confirmPassword": "Confirmer le mot de passe",
       "confirmPasswordPlaceholder": "Répétez votre mot de passe",
       "submit": "S'inscrire",
-      "invalidEmail": "Veuillez entrer une adresse email valide.",
+      "invalidMail": "Veuillez entrer une adresse email valide.",
       "passwordMismatch": "Les mots de passe ne correspondent pas."
     },
 
@@ -65,10 +65,14 @@
       "title": "Connexion",
       "username": "Nom d'utilisateur",
       "usernamePlaceholder": "Entrez votre nom d'utilisateur",
+      "usernameRequired": "Veuillez entrer un nom d'utilisateur",
       "password": "Mot de passe",
       "passwordPlaceholder": "Entrez votre mot de passe",
+      "passwordRequired": "Veuillez entrer un mot de passe",
       "submit": "Se connecter",
-      "passwordMismatch": "Les mots de passe ne correspondent pas."
+      "passwordMismatch": "Les mots de passe ne correspondent pas.",
+      "goToRegister": "Créer un compte",
+      "goToLogin": "Retour à la connexion"
     }
 
   }

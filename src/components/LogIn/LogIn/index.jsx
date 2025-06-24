@@ -2,30 +2,21 @@ import '../LogIn/index.css';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 
-const LogIn = ({ onLogin }) => {
+const LogIn = ({ onLogin, onRegisterClick}) => {
   const { t } = useTranslation();
   const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-
   const [errors, setErrors] = useState({});
-
-  const validateEmail = (email) => {
-    const regex = /^\S+@\S+\.\S+$/;
-    return regex.test(email);
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const newErrors = {};
-    if (!validateEmail(email)) {
-      newErrors.email = t('login.invalidEmail');
+    if (!username) {
+      newErrors.username = t('login.usernameRequired');
     }
-
-    if (password !== confirmPassword) {
-      newErrors.confirmPassword = t('login.passwordMismatch');
+    if (!password) {
+      newErrors.password = t('login.passwordRequired');
     }
 
     if (Object.keys(newErrors).length > 0) {
@@ -34,7 +25,7 @@ const LogIn = ({ onLogin }) => {
     }
 
     setErrors({});
-    onLogin(username, email, password);
+    onLogin(username, password);
   };
 
   return (
@@ -53,10 +44,11 @@ const LogIn = ({ onLogin }) => {
             onChange={(e) => setUsername(e.target.value)}
             required
           />
+          {errors.username && <div className="error">{errors.username}</div>}
         </div>
 
-        <label htmlFor="password">{t('login.password')}</label>
         <div className="login-group">
+          <label htmlFor="password">{t('login.password')}</label>
           <input
             className="login-input"
             type="password"
@@ -67,10 +59,15 @@ const LogIn = ({ onLogin }) => {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
+          {errors.password && <div className="error">{errors.password}</div>}
         </div>
 
         <button type="submit" className="login-button">
           {t('login.submit')}
+        </button>
+        
+        <button onClick={onRegisterClick}>
+          {t('login.goToRegister')}
         </button>
       </form>
     </div>

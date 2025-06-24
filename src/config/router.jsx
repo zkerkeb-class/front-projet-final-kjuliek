@@ -11,6 +11,10 @@ let router = createBrowserRouter([
     path: "/login",
     Component: LoginPage,
   },
+  // {
+  //   path: "/signin",
+  //   Component: SigninPage,
+  // },
   {
     Component: ProtectedRoutes,
     children: [
