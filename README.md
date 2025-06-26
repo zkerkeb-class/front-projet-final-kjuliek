@@ -1,4 +1,4 @@
-# FourmApp Front
+# FourmApp Front : Julie KREUWEN
 ## Préparation du projet :
 
 Visuel attendu pour la page d'accueil :
@@ -18,16 +18,66 @@ Thème dark version pc et mobile
 Lien du Figma pour l'ensemble des maquettes :
 https://www.figma.com/design/adoUELLn9l7vEmZiGI3dZh/FourmApp?node-id=0-1&p=f&t=mI8OzxlzgQ1D3n0a-0
 
+## Liste des fonctionnalités :
+- Authentification utilisateur :
 
-# React + Vite
+    - Connexion avec token JWT
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+    - Sécurisation des routes API
 
-Currently, two official plugins are available:
+- Interface utilisateur latérale (LeftBar)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+    - Boutons de navigation : profil, paramètres, colonies
 
-## Expanding the ESLint configuration
+    - Icônes dynamiques via React Icons
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Gestion des colonies de fourmis
+
+    - Liste dynamique des colonies récupérées via API
+
+    - Ajout d’une colonie vide via un bouton (+)
+
+    - Édition des informations d'une colonie :
+
+        - Nom de la colonie
+
+        - Espèce
+
+        - Nombre d’individus
+
+        - Dernier nourrissage
+
+        - Dernière humidification
+
+    - Sauvegarde des modifications via PUT
+
+- Suppression d’une colonie
+
+    - Bouton de suppression dans l’overlay
+
+    - Confirmation et appel API DELETE
+
+- Overlay dynamique pour chaque colonie
+
+    - Chargement automatique des données de la colonie sélectionnée
+
+    - Support du passage d’une colonie à une autre (reset de l’état)
+
+- Multilingue (i18n)
+
+    - Traduction en français et anglais
+
+    - Interface traduite dynamiquement (via react-i18next)
+
+- Formatage des dates localisé
+
+    - Affichage des dates adapté à la langue active (toLocaleDateString)
+
+- Composants séparés et modulaires
+
+    - SettingsOverlay, ProfilOverlay, AntColonyTrackingOverlay, etc.
+
+## Liste des bonus :
+- Présence d'une maquette Figma pour guider le développement de l'interface
+- Fond d’écran animé (vidéo non interactive)
+- Changement automatique du format de date selon la langue (FR / EN)

@@ -22,22 +22,22 @@ const LoginPage = () => {
     return;
   }
 
-  axios
-    .post("http://localhost:3000/api/register", { username, mail, password })
-    .then((res) => {
-      const token = res?.data?.token;
-      if (token) {
-        localStorage.setItem("token", token);
-        navigate("/");
-      } else {
-        alert("Registration successful, but no token received.");
-      }
-    })
-    .catch((err) => {
-      console.error(err);
-      alert(err.response?.data?.message || "Error during registration");
-    });
-};
+    axios
+      .post("http://localhost:3000/api/register", { username, mail, password })
+      .then((res) => {
+        const token = res?.data?.token;
+        if (token) {
+          localStorage.setItem("token", token);
+          navigate("/");
+        } else {
+          alert("Registration successful, but no token received.");
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+        alert(err.response?.data?.message || "Error during registration");
+      });
+  };
 
   const handleLogin = (username, password) => {
     if (!username || !password) {

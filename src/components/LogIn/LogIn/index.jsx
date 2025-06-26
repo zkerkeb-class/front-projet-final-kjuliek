@@ -2,7 +2,7 @@ import '../LogIn/index.css';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 
-const LogIn = ({ onLogin, onRegisterClick}) => {
+const LogIn = ({ onLogin, onRegisterClick }) => {
   const { t } = useTranslation();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -12,12 +12,8 @@ const LogIn = ({ onLogin, onRegisterClick}) => {
     e.preventDefault();
 
     const newErrors = {};
-    if (!username) {
-      newErrors.username = t('login.usernameRequired');
-    }
-    if (!password) {
-      newErrors.password = t('login.passwordRequired');
-    }
+    if (!username) newErrors.username = t('login.usernameRequired');
+    if (!password) newErrors.password = t('login.passwordRequired');
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -65,8 +61,12 @@ const LogIn = ({ onLogin, onRegisterClick}) => {
         <button type="submit" className="login-button">
           {t('login.submit')}
         </button>
-        
-        <button onClick={onRegisterClick}>
+
+        <button
+          type="button"
+          className="login-button secondary"
+          onClick={onRegisterClick}
+        >
           {t('login.goToRegister')}
         </button>
       </form>

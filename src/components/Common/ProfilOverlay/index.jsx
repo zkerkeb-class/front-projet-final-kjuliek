@@ -1,11 +1,77 @@
 import './index.css';
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
 
 const ProfilOverlay = ({ isOpen }) => {
   if (!isOpen) return null;
+
   const { t } = useTranslation();
   const navigate = useNavigate();
+
+  const [formData, setFormData] = useState({
+    username: "",
+    mail: "",
+    password: ""
+  });
+
+  const [isEditing, setIsEditing] = useState(false);
+
+  useEffect(() => {
+    const fetchProfile = async () => {
+      const token = localStorage.getItem("token");
+      try {
+        const res = await fetch("http://localhost:3000/api/me", {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        });
+
+        const data = await res.json();
+        setFormData({
+          username: data.user.username || "",
+          mail: data.user.mail || "",
+          password: ""
+        });
+      } catch (err) {
+        console.erreur("Error to find user :", err);
+        if (err instanceof Response) {
+          const text = await err.text();
+          console.erreur("Error :", text);
+        }
+      }
+
+    };
+
+    fetchProfile();
+  }, []);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSave = async () => {
+    const token = localStorage.getItem("token");
+    try {
+      const res = await fetch("http://localhost:3000/api/me", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (res.ok) {
+        setIsEditing(false);
+      } else {
+        alert("Erreur lors de la mise à jour.");
+      }
+    } catch (err) {
+      console.error("Erreur maj profil", err);
+    }
+  };
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -18,20 +84,65 @@ const ProfilOverlay = ({ isOpen }) => {
 
       <div className="profil-group">
         <label htmlFor="pseudo">{t("profile-settings.Username")} :</label>
-        <input type="text" id="pseudo" name="pseudo" placeholder="Votre pseudo" />
+        {isEditing ? (
+          <input
+            type="text"
+            id="pseudo"
+            name="username"
+            value={formData.username}
+            onChange={handleChange}
+            readOnly={!isEditing}
+          />
+        ) : (
+          <div><label> {formData.username}</label></div>
+        )}
       </div>
 
       <div className="profil-group">
         <label htmlFor="mail">{t("profile-settings.Mail")} :</label>
-        <input type="mail" id="mail" name="mail" placeholder="votre@mail.com" />
+        {isEditing ? (
+          <input
+            type="email"
+            id="mail"
+            name="mail"
+            value={formData.mail}
+            onChange={handleChange}
+            readOnly={!isEditing}
+          />
+        ) : (
+          <div><label> {formData.mail}</label></div>
+        )}
       </div>
 
       <div className="profil-group">
         <label htmlFor="password">{t("profile-settings.Password")} :</label>
-        <input type="password" id="password" name="password" placeholder="••••••••" />
+        {isEditing ? (
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            placeholder="••••••••"
+            readOnly={!isEditing}
+            required={isEditing}
+          />
+        ) : (
+          <div><label> ••••••••</label></div>
+        )}
       </div>
 
-      <button className="logout-button" type="button" onClick={handleLogout}>
+      {isEditing ? (
+        <button className="save-button" onClick={handleSave}>
+          Sauvegarder
+        </button>
+      ) : (
+        <button className="edit-button" onClick={() => setIsEditing(true)}>
+          Modifier
+        </button>
+      )}
+
+      <button className="logout-button" onClick={handleLogout}>
         {t("profile-settings.Log out")}
       </button>
     </div>
