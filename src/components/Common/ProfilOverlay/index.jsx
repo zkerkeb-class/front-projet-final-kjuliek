@@ -2,6 +2,7 @@ import './index.css';
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
+import { FaEdit, FaSave } from 'react-icons/fa';
 
 const ProfilOverlay = ({ isOpen }) => {
   if (!isOpen) return null;
@@ -82,6 +83,16 @@ const ProfilOverlay = ({ isOpen }) => {
     <div className="profil-overlay">
       <h3>{t("profile-settings.Profile Settings")}</h3>
 
+      {isEditing ? (
+        <button className="save-button" onClick={handleSave}>
+          <FaSave />
+        </button>
+      ) : (
+        <button className="edit-button" onClick={() => setIsEditing(true)}>
+          <FaEdit />
+        </button>
+      )}
+
       <div className="profil-group">
         <label htmlFor="pseudo">{t("profile-settings.Username")} :</label>
         {isEditing ? (
@@ -131,16 +142,6 @@ const ProfilOverlay = ({ isOpen }) => {
           <div><label> ••••••••</label></div>
         )}
       </div>
-
-      {isEditing ? (
-        <button className="save-button" onClick={handleSave}>
-          Sauvegarder
-        </button>
-      ) : (
-        <button className="edit-button" onClick={() => setIsEditing(true)}>
-          Modifier
-        </button>
-      )}
 
       <button className="logout-button" onClick={handleLogout}>
         {t("profile-settings.Log out")}

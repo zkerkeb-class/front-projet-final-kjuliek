@@ -2,6 +2,7 @@ import './index.css';
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import axios from 'axios';
+import { FaEdit, FaSave, FaTrash } from 'react-icons/fa';
 
 const AntColonyTrackingOverlay = ({ index }) => {
   const isOpen = index !== null;
@@ -112,6 +113,12 @@ const AntColonyTrackingOverlay = ({ index }) => {
     <div className="ant-colony-overlay">
       <h3>{t("ant-colony-tracking.Ant Colony Tracking")}</h3>
 
+      {isEditing && 
+        <button className="ant-colony-delete-button" onClick={handleDelete}>
+          <FaTrash />
+        </button>
+      }
+
       <div className="ant-colony-group">
         <label htmlFor="colonyName">{t("ant-colony-tracking.Colony Name")} :</label>
         {isEditing ? (
@@ -198,18 +205,15 @@ const AntColonyTrackingOverlay = ({ index }) => {
 
       {!isEditing ? (
       <button className="ant-colony-edit-button" onClick={toggleEdit}>
-        {t("Edit")}
+          <FaEdit />
       </button>
-    ) : (
+      ) : (
       <>
         <button className="ant-colony-save-button" onClick={handleSave}>
-          {t("Save Tracking")}
-        </button>
-        <button className="ant-colony-delete-button" onClick={handleDelete}>
-          {t("Delete Colony")}
+          <FaSave />
         </button>
       </>
-    )}
+      )}
 
     </div>
   );
